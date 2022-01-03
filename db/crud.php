@@ -106,4 +106,19 @@ class crud
         }
         
     }
+    public function getSpecialtiesById($id)
+    {
+        try{
+            $sql = "SELECT * FROM `specialty` where specialty_id=:id";
+            $statment =$this->db->prepare($sql);
+            $statment->bindparam(':id',$id);
+            $statment->execute();
+            $result = $statment->fetch();
+            return $result;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+        
+    }
 }
