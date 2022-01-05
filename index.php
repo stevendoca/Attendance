@@ -5,7 +5,7 @@ require_once 'db/conn.php';
 $results = $crud->getSpecialties(); 
 ?>
 <h1 class="text-center">PHP Project</h1>
-<form method="post" action="success.php">
+<form method="post" action="success.php" enctype="multipart/form-data">
 <div class="form-group">
     <label for="firstName">First Name</label>
     <input required type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your first name">
